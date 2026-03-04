@@ -1,4 +1,4 @@
-const apiKey = "3d585053cb88a4302c78c60bbdca5ac0";
+const apiKey = "Paste your API key here";
 const searchBtn = document.querySelector(".search .searchbtn");
 const lovedbtn = document.querySelector(".search .loved");
 const lovedList = document.getElementById("lovedl");
@@ -116,4 +116,5 @@ function loadLoved() {
 lovedbtn.addEventListener("click", () => {
     loadLoved();
     lovedList.style.display = "block";
+
 });
