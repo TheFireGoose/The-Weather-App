@@ -6,40 +6,35 @@
     
     <title>Test</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon/favicon.png" type="image/x-icon">
 </head>
 <body>
-    <div class="card">
-        <div class="search">
-            <input type="text" placeholder="Enter city">
-            <button type="button">Searchs</button>
-        </div>
-        <div class="error">
-            <p>Invalid city name</p>
-        </div>
-        <div class="weather">
-        <img src="" class="weater-icon">
+        <div class="card">
+    <div class="search">
+        <button type="button" class="loved"><p>&hearts;</p></button>
+        <ul id="lovedl" class="loved-list"></ul>
+        <input type="text" placeholder="Enter city" id="city">
+        <ul id="history" class="history-list"></ul>
+        <button type="button" class="searchbtn">Search</button>
+    </div>
+
+    <div class="error"><p>Invalid city name</p></div>
+
+    <div class="weather">
         <h1 class="temp">22c</h1>
+        <p class="feels-like">Feels like 24°C</p>
         <h2 class="city">New York</h2>
         <div class="det">
             <div class="col">
-                <img src="" >
-                <div>
-                    <p class="humidity">
-                        Humidity: 60%
-                    </p>
-                </div>
+                <p class="humidity">Humidity: 60%</p>
             </div>
             <div class="col">
-                <img src="" >
-                <div>
-                    <p class="wind">
-                        Wind speed 15km/h
-                    </p>
-                </div>
+                <p class="wind">Wind speed 15km/h</p>
             </div>
         </div>
     </div>
-    </div>
+</div>
+   
    
 
     <script src="test.js">
