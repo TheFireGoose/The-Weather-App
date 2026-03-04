@@ -6,19 +6,20 @@
 }
 body {
     height: 100%;
-    background-color: #222;
+    background-color: #585858;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     justify-content: center;
     padding-top: 50px;
 }
+
 .card{
     width: 90%;
     max-width: 600px;
     background: linear-gradient(135deg, #1fa8ca 0%, #0d0a96 100%);
     color: #fff;
-    margin: 50px auto;
+    margin: 100px auto;
     border-radius: 20px;
     padding: 40px 35px;
     text-align: center;
@@ -62,7 +63,18 @@ body {
     cursor: pointer;
     width: 60px;
     border-radius: 100px;
-    padding-left: 23px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.search .change {
+    border: 0;
+    outline: 0;
+    color: #000000;
+    font-size: 20px;
+    cursor: pointer;
+    width: 100px;
+    border-radius: 100px;
+    margin-left: 20px;
 }
 .history-list {
     position: absolute;
@@ -134,9 +146,14 @@ body {
     align-items: center;
     text-align: left;
 }
+.row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .humidity, .wind{
     font-size: 28px;
-    margin: -6px;
+    margin: 6px;
 }
 .weather{
     display: none;
@@ -150,6 +167,24 @@ body {
 }
 p.feels-like {
     font-size: 15px;
-    margin-top: -10px;
     color: #ddd;
+    margin: 5px;
+}
+.minmax {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.suntimes {
+    display: flex;
+    margin: 6px;
+}
+p.wind {
+    text-align: center;
+}
+h2.city {
+    margin-top: 20px;
+}
+.fa-solid-fa-moon{
+    color: #000000;
 }

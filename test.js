@@ -5,6 +5,8 @@ const lovedList = document.getElementById("lovedl");
 const searchInput = document.querySelector(".search input");
 const historyList = document.getElementById("history");
 const input = document.getElementById("city");
+const btnlu = document.querySelector(".search .lovedl");
+const changeBtn = document.querySelector(".search .change");
 
 document.addEventListener("DOMContentLoaded", loadHistory);
 document.addEventListener("DOMContentLoaded", loadLoved);
@@ -29,6 +31,10 @@ async function checkWeather(city) {
     document.querySelector(".feels-like").innerHTML = "Feels like " + Math.round(data.main.feels_like) + "°C";
     document.querySelector(".humidity").innerHTML = "Humidity: " + data.main.humidity + "%";
     document.querySelector(".wind").innerHTML = "Wind speed: " + Math.round(data.wind.speed) + "km/h";
+    document.querySelector(".min").innerHTML = "Min: " + Math.round(data.main.temp_min) + "°C";
+    document.querySelector(".max").innerHTML = "Max: " + Math.round(data.main.temp_max) + "°C";
+    document.querySelector(".sunraise").innerHTML = "Sunrise: " + new Date(data.sys.sunrise * 1000).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+    document.querySelector(".sunset").innerHTML = "Sunset: " + new Date(data.sys.sunset * 1000).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
 
     if(data.weather[0].main == "Clouds") {
         document.querySelector("body").style.backgroundImage = "url('images/sunny-clouddy-weather.png')";
@@ -45,7 +51,11 @@ async function checkWeather(city) {
 }
 searchBtn.addEventListener("click", () => {
     checkWeather(searchInput.value);
+    historyList.style.display = "none";
+    lovedList.style.display = "none";
 });
+
+
 function saveCity(city) {
     if(!city) return;
     let history = JSON.parse(localStorage.getItem("cityHistory")) || [];
@@ -76,6 +86,7 @@ input.addEventListener("focus", () => {
     loadHistory();
     historyList.style.display = "block";
 });
+
 
 function saveCitytolov(city) {
     if(!city) return;
